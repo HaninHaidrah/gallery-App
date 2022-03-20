@@ -39,7 +39,7 @@ const LikedPhotos = () => {
     console.log(item);
     //   const reqBody = { title: item.title };
     let res = await axios.delete(
-      `https://galleria-1.herokuapp.com/api/v2/liked/${item.id}`
+      `https://shot-app.herokuapp.com/api/v2/liked/${item.id}`
     );
     console.log(res, "deleted");
     localStorage.setItem("userFavPhotos", JSON.stringify(res.data));

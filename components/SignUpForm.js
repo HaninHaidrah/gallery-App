@@ -18,7 +18,7 @@ const SignUpForm = ({
     };
 
     axios
-      .post("https://galleria-1.herokuapp.com/signup", reqBody)
+      .post("https://shot-app.herokuapp.com/signup", reqBody)
       .then((foundUser) => {
         if (foundUser.data.err) {
           Swal.fire({

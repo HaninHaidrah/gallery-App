@@ -18,7 +18,7 @@ const Editcommentmodal = ({ obj, showCommentEdit, closemodal }) => {
     };
 
     let respone = await axios.put(
-      `https://galleria-1.herokuapp.com/api/v2/liked/${obj.id}`,
+      `https://shot-app.herokuapp.com/api/v2/liked/${obj.id}`,
       reqBody
     );
 

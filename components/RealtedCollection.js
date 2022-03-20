@@ -60,15 +60,15 @@ const RelatedCollection = () => {
     <>
       <div style={{ margin: "90px 50px" }}>
         <>
-          {/* {items.length === 0 && (
-            <div class="d-flex justify-content-center">
+          {items.length === 0 && (
+            <div className="d-flex justify-content-center">
               <div
                 style={{ textAlign: "center", margin: "0px auto" }}
-                class="spinner-grow text-danger"
+                className="spinner-grow text-danger"
                 role="status"
               ></div>
             </div>
-          )} */}
+          )}
 
           <Masonry
             breakpointCols={breakpoints}

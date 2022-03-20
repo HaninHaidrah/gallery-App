@@ -19,27 +19,25 @@ const IntrestForm = ({ setIntrestModel }) => {
       if (query_id.checked) {
         chosen.push(query_id.name);
       }
-      
     }
-    console.log(chosen,"chossssssssssssen");
+    console.log(chosen, "chossssssssssssen");
     console.log("query_id");
-    let list=[]
+    let list = [];
 
-    for(let i=0;i<chosen.length;i++){
+    for (let i = 0; i < chosen.length; i++) {
       axios
-      .get(`https://api.unsplash.com/search/collections?client_id=8EgaFISttmW0yVj6J575P1by4zWGTAbN-a2AYo6mXdI&query=${chosen[i]}`)
-      .then((chosedItem) => {
-        list.push(chosedItem.data.results);
-        // console.log(chosedItem.data.results);
-        console.log("done");
+        .get(
+          `https://api.unsplash.com/search/collections?client_id=8EgaFISttmW0yVj6J575P1by4zWGTAbN-a2AYo6mXdI&query=${chosen[i]}`
+        )
+        .then((chosedItem) => {
+          list.push(chosedItem.data.results);
+          // console.log(chosedItem.data.results);
+          console.log("done");
 
-        console.log(list,"list")
-        setArray(list)
-           window.localStorage.setItem(
-            "intrsetItems",
-            JSON.stringify(list)
-          );
-      });
+          console.log(list, "list");
+          setArray(list);
+          window.localStorage.setItem("intrsetItems", JSON.stringify(list));
+        });
 
       // console.log(list,"list")
       // setArray(list)
@@ -47,7 +45,6 @@ const IntrestForm = ({ setIntrestModel }) => {
       //     "intrsetItems",
       //     JSON.stringify(list)
       //   );
-
     }
     // axios
     //   .get(

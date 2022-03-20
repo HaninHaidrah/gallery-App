@@ -19,7 +19,7 @@ const SingleCard = ({ show, content, handleCloseTheCard }) => {
     };
     // console.log(e.target.comment.value);
     let respone = await axios.post(
-      `https://galleria-1.herokuapp.com/api/v2/liked`,
+      `https://shot-app.herokuapp.com/api/v2/liked`,
       reqBody
     );
 

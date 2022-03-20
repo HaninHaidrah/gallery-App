@@ -9,7 +9,7 @@ const Header = ({ setSignUpShow, setSignInShow }) => {
       <Navbar className="header shadow-sm p-3 mb-5  rounded">
         <Navbar.Brand className="mr-lg-5" href="/">
           <Image
-            src="/logo6.png"
+            src="/logo61.png"
             className={styles.logo}
             width={200}
             height={100}

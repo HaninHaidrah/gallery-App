@@ -16,7 +16,7 @@ const SignInForm = ({ signInShow, setSignInShow, setIsLoggedIn }) => {
       password: e.target.password.value,
     };
     superagent
-      .post("https://galleria-1.herokuapp.com/signin")
+      .post("https://shot-app.herokuapp.com/signin")
       .set(
         "authorization",
         `Basic ${base64.encode(`${reqBody.username}:${reqBody.password}`)}`
@@ -85,7 +85,7 @@ const SignInForm = ({ signInShow, setSignInShow, setIsLoggedIn }) => {
               padding: "0 0 20px",
             }}
           >
-            <img src="/logo6.png" style={{ width: "4em" }} />
+            <img src="/logo61.png" style={{ width: "4em" }} />
             <br />
             <h2 style={{ fontWeight: "700" }}>Welcome To Explorest</h2>
           </Modal.Title>
