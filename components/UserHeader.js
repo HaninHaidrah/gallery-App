@@ -9,16 +9,17 @@ const UserHeader = ({ handleChangeHeader, handleSearch,setCollectionState }) => 
     <header>
       <Navbar className="header shadow-sm p-3 mb-5 bg-white rounded">
         <Navbar.Brand className="mr-lg-5" href="/">
-          <img src="/logo6.png" className={styles.logo} />
+          <img src="/logo61.png" className={styles.logo} />
         </Navbar.Brand>
 
         <Navbar.Collapse id="navbarScroll" className={styles.userNav}>
           <Nav.Link
             style={{
               padding: "0 8px",
-              color: "#434242",
+             color: "#6a6668",
               fontSize: "1.2em",
               fontWeight: "600",
+
             }}
             href="/"
           >
@@ -27,7 +28,7 @@ const UserHeader = ({ handleChangeHeader, handleSearch,setCollectionState }) => 
           <Nav.Link
             style={{
               padding: "0 15px 0 8px",
-              color: "#434242",
+              color: "#6a6668",
               fontSize: "1.2em",
               fontWeight: "600",
             }}
@@ -53,7 +54,8 @@ const UserHeader = ({ handleChangeHeader, handleSearch,setCollectionState }) => 
             style={{
               borderRadius: "50px",
               fontWeight: "bold",
-              margin: "0 5px",
+              margin: "0px 8em",
+              background:"#62c6bf"
             }}
             onClick={handleChangeHeader}
           >

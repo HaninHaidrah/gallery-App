@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button, Modal, Carousel } from "react-bootstrap";
 import axios from "axios";
-// import { withRouter } from "react-router-dom";
-// import Header from "./Header";
-// import logo from "../assets/logo.png";
 import foodImg from "../components/assets/foodimg.json";
-// import foodImg from "../assets/foodimg.json";
 import artImg from "../components/assets/artimg.json";
 import animalImg from "../components/assets/animal.json";
 import Masonry from "react-masonry-css";
@@ -13,7 +9,6 @@ import Swal from "sweetalert2";
 import SignInForm from "./SigninForm";
 import Header from "./Header";
 import SignUpForm from "./SignUpForm";
-import Link from "next/link";
 import RelatedCollection from "./RealtedCollection";
 import IntrestForm from "./IntrestForm";
 import UserHeader from "./UserHeader";
@@ -80,7 +75,7 @@ const HomePage = () => {
               <div className="carsForm">
                 <br />
                 <br />
-                <h1>Explore New Things</h1>
+                <h1>It is Time to SHOT</h1>
                 <h2 style={{ color: "#FFC069" }}>New recipes</h2>
 
                 <Masonry
@@ -114,7 +109,7 @@ const HomePage = () => {
               <div className="carsForm">
                 <br />
                 <br />
-                <h1>Explore New Things</h1>
+                <h1>It is Time to SHOT</h1>
                 <h2 style={{ color: "#57CC99" }}>Wild, Nature & Plants</h2>
 
                 <Masonry
@@ -148,7 +143,7 @@ const HomePage = () => {
               <div className="carsForm">
                 <br />
                 <br />
-                <h1>Explore New Things</h1>
+                <h1>It is Time to SHOT</h1>
                 <h2 style={{ color: "#548CA8" }}>Books, News & Sport</h2>
 
                 <Masonry

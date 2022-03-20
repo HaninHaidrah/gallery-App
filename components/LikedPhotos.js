@@ -13,6 +13,7 @@ const LikedPhotos = () => {
   const [likedPhotos, setLiked] = useState([]);
   const [commentState, setShowComment] = useState(false); // to show the comment Model
   const [obj, setItemObject] = useState({});
+
   useEffect(() => {
     setLiked([JSON.parse(window.localStorage.getItem("userFavPhotos"))]);
   }, []);
@@ -55,7 +56,6 @@ const LikedPhotos = () => {
       }}
     >
       <Row xs={1} md={5} className="g-4">
-          
         {likedPhotos.map((item, idx) => {
           return (
             <div key={idx}>
@@ -87,10 +87,11 @@ const LikedPhotos = () => {
                         border: "0",
                         color: "gray",
                         marginLeft: "7em",
+                        position: "absolute",
+                        left: "5%",
                       }}
                     >
                       Edit
-                      {/* <i class="fas fa-edit" style={{ fontSize: "1.3em" }}></i> */}
                     </button>
 
                     <button
@@ -103,13 +104,11 @@ const LikedPhotos = () => {
                         backgroundColor: "#ffffff00",
                         border: "0",
                         color: "#dc3545",
+                        position: "absolute",
+                        left: "8%"
                       }}
                     >
                       Delete
-                      {/* <i
-                        class="fas fa-trash-alt"
-                        style={{ fontSize: "1.3em" }}
-                      ></i> */}
                     </button>
                     <Card.Title
                       style={{
@@ -120,7 +119,8 @@ const LikedPhotos = () => {
                       }}
                     >
                       {" "}
-                      <img src={"/logo6.png"} style={{ width: "1.2em" }} />{" "}
+                      <br></br>
+                      <br></br>
                       {item.comment}
                     </Card.Title>
                     <Card.Text>

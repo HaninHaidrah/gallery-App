@@ -1,7 +1,9 @@
 .logo {
   width: 190px;
-  margin-left: 30px;
-}
+  margin-left: 100px;
+  position: absolute;
+  left: 68%;
+  top: 4%;}
 .navBar {
   margin-left: 900px;
   font-weight: bold;
@@ -27,6 +29,7 @@
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   border-radius: 5em;
+  margin-top: 2em;
   margin-left: 10px;
   margin-right: 30px;
   width: 60em;

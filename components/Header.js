@@ -6,25 +6,19 @@ import styles from "../styles/Header.module.css";
 const Header = ({ setSignUpShow, setSignInShow }) => {
   return (
     <header>
-      <Navbar className="header shadow-sm p-3 mb-5 bg-white rounded">
+      <Navbar className="header shadow-sm p-3 mb-5  rounded">
         <Navbar.Brand className="mr-lg-5" href="/">
           <Image
             src="/logo6.png"
             className={styles.logo}
-            width={100}
-            height={50}
+            width={200}
+            height={100}
           />
         </Navbar.Brand>
 
         <Navbar.Collapse id="navbarScroll" className={styles.navBar}>
-          <Nav.Link style={{ padding: "0 8px", color: "black" }} href="/">
+          <Nav.Link style={{ padding: "0 8px", color: "#6a6668" }} href="/">
             Home
-          </Nav.Link>
-          <Nav.Link
-            style={{ padding: "0 15px 0 8px", color: "black" }}
-            href="/about"
-          >
-            About
           </Nav.Link>
           <Button
             variant="danger"
@@ -32,10 +26,11 @@ const Header = ({ setSignUpShow, setSignInShow }) => {
               borderRadius: "50px",
               fontWeight: "bold",
               margin: "0 5px",
+              background: "#E60965",
             }}
             onClick={() => {
               setSignInShow(true);
-              console.log("clicked")
+              console.log("clicked");
             }}
           >
             Log In
@@ -46,10 +41,11 @@ const Header = ({ setSignUpShow, setSignInShow }) => {
               borderRadius: "50px",
               fontWeight: "bold",
               margin: "0 5px",
+              color: "#6a6668"
             }}
             onClick={() => {
               setSignUpShow(true);
-              console.log("clicked")
+              console.log("clicked");
             }}
           >
             Sign Up

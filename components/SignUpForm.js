@@ -3,9 +3,12 @@ import { Form, Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-
-const SignUpForm = ({ signUpShow, setIntrestModel, setIsLoggedIn,setSignUpShow }) => {
-
+const SignUpForm = ({
+  signUpShow,
+  setIntrestModel,
+  setIsLoggedIn,
+  setSignUpShow,
+}) => {
   const handleSignUp = (e) => {
     e.preventDefault();
     const reqBody = {
@@ -14,46 +17,47 @@ const SignUpForm = ({ signUpShow, setIntrestModel, setIsLoggedIn,setSignUpShow }
       Email: e.target.email.value,
     };
 
-    axios.post("https://galleria-1.herokuapp.com/signup", reqBody).then((foundUser) => {
-      if (foundUser.data.err) {
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: foundUser.data.message,
-          showConfirmButton: false,
-          timer: 2500,
-        });
-      } else {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Signed up successfuly",
-          showConfirmButton: false,
-          timer: 2500,
-        });
-        console.log(foundUser.data.user);
+    axios
+      .post("https://galleria-1.herokuapp.com/signup", reqBody)
+      .then((foundUser) => {
+        if (foundUser.data.err) {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: foundUser.data.message,
+            showConfirmButton: false,
+            timer: 2500,
+          });
+        } else {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Signed up successfuly",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          console.log(foundUser.data.user);
 
-        // 1.To Save in local and then use it and save user Data to use them with profile:
-        window.localStorage.setItem(
-          "Token",
-          JSON.stringify(foundUser.data.user.token)
-        );
-        window.localStorage.setItem(
-          "user",
-          JSON.stringify(foundUser.data.user)
-        );
-      
+          // 1.To Save in local and then use it and save user Data to use them with profile:
+          window.localStorage.setItem(
+            "Token",
+            JSON.stringify(foundUser.data.user.token)
+          );
+          window.localStorage.setItem(
+            "user",
+            JSON.stringify(foundUser.data.user)
+          );
 
-        // 2.change userState
-        setIsLoggedIn(true);
+          // 2.change userState
+          setIsLoggedIn(true);
 
-        // 3.Show the intrest Model
-        setIntrestModel(true);
+          // 3.Show the intrest Model
+          setIntrestModel(true);
 
-        //4.close the Model
-        setSignUpShow(false)
-      }
-    });
+          //4.close the Model
+          setSignUpShow(false);
+        }
+      });
   };
   return (
     <div>
@@ -64,7 +68,9 @@ const SignUpForm = ({ signUpShow, setIntrestModel, setIsLoggedIn,setSignUpShow }
       >
         <Modal.Header
           closeButton
-          onClick={()=>{setSignUpShow(false)}}
+          onClick={() => {
+            setSignUpShow(false);
+          }}
           style={{
             border: "0px",
           }}
@@ -80,12 +86,12 @@ const SignUpForm = ({ signUpShow, setIntrestModel, setIsLoggedIn,setSignUpShow }
               padding: "0 0 20px",
             }}
           >
-            <img src="/logo6.png" style={{ width: "4em" }} />
-            <br />
-            <h2 style={{ fontWeight: "700" }}>Welcome To Explorest</h2>
+            <h2 style={{ fontWeight: "700" ,color:"#62c6bf"}}>
+             Create Your Account  
+              <img src={"/logo61.png"} style={{ width: "12rem" }} />
+            </h2>
           </Modal.Title>
           <Modal.Body>
-            {/* <Form className="loginForm"> */}
             <Form className="loginForm" onSubmit={handleSignUp}>
               <Form.Group className="mb-3" controlId="formBasicuserName">
                 <Form.Control

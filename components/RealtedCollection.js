@@ -12,6 +12,7 @@ const RelatedCollection = () => {
   const [items, setItems] = useState([]);
   const [cardDetails, setCardDetails] = useState("");
   const [showSingleCard, setShowState] = useState(false);
+  const arr = [];
 
   const breakpoints = {
     default: 5,
@@ -27,11 +28,32 @@ const RelatedCollection = () => {
   const handleCloseTheCard = () => {
     setShowState(!showSingleCard);
   };
+
+  // // merge the whole arrays in one array
+  // let i = 0;
+  // let arr = [];
+  // while (i < items.length) {
+  //   arr.concat(items[i]);
+  //   i++
+  //   console.log("while working")
+  // }
+  // console.log(arr);
+
   useEffect(() => {
     const intrestList = JSON.parse(localStorage.getItem("intrsetItems"));
     if (intrestList) {
       setItems(intrestList);
+      // merge the whole arrays in one array
+      let i = 0;
+      while (i < intrestList.length) {
+        arr.push(...intrestList[i]);
+        i++;
+        console.log("while working", intrestList[i], arr);
+      }
+      console.log(arr, "arrayafterconcat");
       console.log(intrestList);
+      setItems(arr);
+
     }
   }, []);
   return (
@@ -53,10 +75,10 @@ const RelatedCollection = () => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {items.map((value,index) => {
+            {items.map((value, index) => {
               return (
                 <Card
-                key={index}
+                  key={index}
                   style={{ width: "17rem", border: "0" }}
                   onClick={() => {
                     handleZoom(
@@ -100,7 +122,7 @@ const RelatedCollection = () => {
             show={showSingleCard}
             content={cardDetails}
             handleCloseTheCard={handleCloseTheCard}
-          /> 
+          />
         </>
       </div>
     </>

@@ -19,21 +19,48 @@ const IntrestForm = ({ setIntrestModel }) => {
       if (query_id.checked) {
         chosen.push(query_id.name);
       }
+      
     }
-    console.log(chosen);
+    console.log(chosen,"chossssssssssssen");
     console.log("query_id");
-    axios
-      .get(
-        `https://api.unsplash.com/collections?:id=${chosen[0]}&client_id=8EgaFISttmW0yVj6J575P1by4zWGTAbN-a2AYo6mXdI`
-      )
+    let list=[]
+
+    for(let i=0;i<chosen.length;i++){
+      axios
+      .get(`https://api.unsplash.com/search/collections?client_id=8EgaFISttmW0yVj6J575P1by4zWGTAbN-a2AYo6mXdI&query=${chosen[i]}`)
       .then((chosedItem) => {
-        setArray(chosedItem.data);
-        console.log(chosedItem.data);
-        window.localStorage.setItem(
-          "intrsetItems",
-          JSON.stringify(chosedItem.data)
-        );
+        list.push(chosedItem.data.results);
+        // console.log(chosedItem.data.results);
+        console.log("done");
+
+        console.log(list,"list")
+        setArray(list)
+           window.localStorage.setItem(
+            "intrsetItems",
+            JSON.stringify(list)
+          );
       });
+
+      // console.log(list,"list")
+      // setArray(list)
+      //    window.localStorage.setItem(
+      //     "intrsetItems",
+      //     JSON.stringify(list)
+      //   );
+
+    }
+    // axios
+    //   .get(
+    //     `https://api.unsplash.com/collections?:id=${chosen[0]}&client_id=8EgaFISttmW0yVj6J575P1by4zWGTAbN-a2AYo6mXdI`
+    //   )
+    //   .then((chosedItem) => {
+    //     setArray(chosedItem.data);
+    //     console.log(chosedItem.data);
+    //     window.localStorage.setItem(
+    //       "intrsetItems",
+    //       JSON.stringify(chosedItem.data)
+    //     );
+    //   });
     setIntrestModel(false);
   };
 
@@ -60,7 +87,7 @@ const IntrestForm = ({ setIntrestModel }) => {
             <Form.Check
               inline
               label="News"
-              name="news"
+              name="covid"
               type={"checkbox"}
               id={`2`}
               className={styles.intrest_box_check}
@@ -82,7 +109,7 @@ const IntrestForm = ({ setIntrestModel }) => {
             <Form.Check
               inline
               label="Animals"
-              name="animal"
+              name="Animal"
               type={"checkbox"}
               id={`4`}
               className={styles.intrest_box_check}
@@ -105,7 +132,7 @@ const IntrestForm = ({ setIntrestModel }) => {
             <Form.Check
               inline
               label="Sport"
-              name="sport"
+              name="Sport"
               type={"checkbox"}
               id={`6`}
               className={styles.intrest_box_check}
