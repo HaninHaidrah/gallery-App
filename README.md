@@ -14,6 +14,10 @@
  npm i
  npm run dev 
 
-## Backend Deployed on Heroku: https://galleria-1.herokuapp.com
+* Backend Deployed on Heroku: https://galleria-1.herokuapp.com
 
-## FrontEnd Deplyed on vercel : https://gallery-app-hanin-ic4t4yrq1-haninhaidrah.vercel.app/
+* FrontEnd Deplyed on vercel : https://shot-app-ga5mydwep-haninhaidrah.vercel.app/
+
+## Technologies:
+- frontend => next.js js bootsrap pure css 
+- backend => node.js express postgres herouku
