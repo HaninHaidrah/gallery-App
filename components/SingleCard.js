@@ -10,6 +10,14 @@ const SingleCard = ({ show, content, handleCloseTheCard }) => {
   }, []);
   // function to add to fav
   const addToFavorite = async (e) => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "The Photo added succefully check your profile",
+      showConfirmButton: false,
+      timer: 2500,
+    });
+    
     e.preventDefault();
     const reqBody = {
       title: content.title,
@@ -30,13 +38,13 @@ const SingleCard = ({ show, content, handleCloseTheCard }) => {
 
     localStorage.setItem("userFavPhotos", JSON.stringify(respone.data));
 
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "The Photo added succefully check your profile",
-      showConfirmButton: false,
-      timer: 2500,
-    });
+    // Swal.fire({
+    //   position: "center",
+    //   icon: "success",
+    //   title: "The Photo added succefully check your profile",
+    //   showConfirmButton: false,
+    //   timer: 2500,
+    // });
 
     handleCloseTheCard();
   };
