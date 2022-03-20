@@ -9,7 +9,7 @@ const UserHeader = ({ handleChangeHeader, handleSearch,setCollectionState }) => 
     <header>
       <Navbar className="header shadow-sm p-3 mb-5 bg-white rounded">
         <Navbar.Brand className="mr-lg-5" href="/">
-          <img src="/logo61.png" className={styles.logo} />
+          {/* <img src="/logo6.png" className={styles.logo} /> */}
         </Navbar.Brand>
 
         <Navbar.Collapse id="navbarScroll" className={styles.userNav}>
